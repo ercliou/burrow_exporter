@@ -74,6 +74,7 @@ type Partition struct {
 	Topic     string `json:"topic"`
 	Partition int32  `json:"partition"`
 	Status    string `json:"status"`
+	Owner     string `json:"owner"`
 	Start     Offset `json:"start"`
 	End       Offset `json:"end"`
 }
