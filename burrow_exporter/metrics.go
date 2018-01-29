@@ -17,13 +17,6 @@ var (
 		},
 		[]string{"cluster", "group", "topic", "partition"},
 	)
-	KafkaConsumerPartitionMaxOffset = prometheus.NewGaugeVec(
-		prometheus.GaugeOpts{
-			Name: "kafka_burrow_partition_max_offset",
-			Help: "The log end offset on a partition as reported by burrow.",
-		},
-		[]string{"cluster", "group", "topic", "partition"},
-	)
 	KafkaConsumerTotalLag = prometheus.NewGaugeVec(
 		prometheus.GaugeOpts{
 			Name: "kafka_burrow_total_lag",
@@ -43,7 +36,6 @@ var (
 func init() {
 	prometheus.MustRegister(KafkaConsumerPartitionLag)
 	prometheus.MustRegister(KafkaConsumerPartitionCurrentOffset)
-	prometheus.MustRegister(KafkaConsumerPartitionMaxOffset)
 	prometheus.MustRegister(KafkaConsumerTotalLag)
 	prometheus.MustRegister(KafkaTopicPartitionOffset)
 }

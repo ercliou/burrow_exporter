@@ -57,7 +57,6 @@ type Offset struct {
 	Offset    int64 `json:"offset"`
 	Timestamp int64 `json:"timestamp"`
 	Lag       int64 `json:"lag"`
-	MaxOffset int64 `json:"max_offset"`
 }
 
 type ConsumerGroupStatus struct {
@@ -77,6 +76,7 @@ type Partition struct {
 	Owner     string `json:"owner"`
 	Start     Offset `json:"start"`
 	End       Offset `json:"end"`
+  CurrentLag int64 `json:"current_lag"`
 }
 
 type ConsumerGroupStatusResp struct {
